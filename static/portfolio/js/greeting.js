@@ -4,7 +4,6 @@ const mainContent = document.getElementById('main-content');
 const greetings = [
     { language: 'en', text: 'Hello!' },
     { language: 'fr', text: 'Bonjour!' },
-    { language: 'ru', text: 'Привет!' },
     { language: 'tat', text: 'Сәлам!' },
     { language: 'beng', text: 'Namaskaar!' },
     { language: 'chi', text: '你好!' },
@@ -17,15 +16,34 @@ const greetings = [
     { language: 'ivr', text: 'Shalom!'},
     { language: 'avs', text: 'Grüßgott!'},
     { language: 'kor', text: '안녕!'},
+    { language: 'ru', text: 'Привет!' },
 ];
+
+const firstInterval = 300; // Interval for the first greeting in milliseconds
+const intervalBetween = 140; // Interval for greetings in between in milliseconds
+const lastInterval = 400; // Interval for the last greeting in milliseconds
 
 let currentIndex = 0;
 
 function setGreeting() {
     const currentGreeting = greetings[currentIndex];
     greetingText.textContent = currentGreeting.text;
-    
+
+    let interval;
+
+    // Set custom intervals for the first and last greeting
+    if (currentIndex === 0) {
+        interval = firstInterval;
+    } else if (currentIndex === greetings.length - 1) {
+        interval = lastInterval;
+    } else {
+        interval = intervalBetween;
+    }
+
     currentIndex = (currentIndex + 1) % greetings.length;
+
+    // Set the new interval
+    setTimeout(setGreeting, interval);
 }
 
 function showMainContent() {
@@ -33,7 +51,6 @@ function showMainContent() {
     mainContent.style.display = 'block';
 }
 
-// Display the greetings alternately, then reveal the main content after a delay
-setInterval(setGreeting, 120); // Change the interval as needed (e.g., 3000 milliseconds for 3 seconds)
-setTimeout(showMainContent, 1920); // Adjust the delay to match the interval
-
+// Initial call to setGreeting
+setGreeting();
+setTimeout(showMainContent, 2600)
