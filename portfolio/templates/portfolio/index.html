@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css'%}">
+    <title>Ainur G.</title>
+</head>
+
+<body>
+    <div id="greeting">
+        <p id="greeting-text"></p>
+    </div>
+    <div id="main-content" style="display: none;">
+        <header class="header">
+            <div class="container">
+                <div class="navbar">
+                    <nav class="menu">
+                        <ul class="nav_list">
+                          <li><a class="nav_link" href="#">Home</a></li>
+                          <li><a class="nav_link" href="#">About</a></li>
+                          <li><a class="nav_link" href="#">Work</a></li>
+                          <li><a class="nav_link" href="#">Contact</a></li>
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+        </header>
+        
+        <section class="welcome">
+            <div class="welcome_text">
+                Hello world<span class="color_text">, </span><br>this is Ainur G<span class="color_text">.</span>
+            </div>
+            <div class="job_text">
+                AND I<span class="color_text">'</span>M SYSTEM ANALYST<span class="color_text">.</span>
+            </div>
+            <div class="me">
+    
+            </div>
+        </section>
+    
+        <section class="info_section">
+            <div class="info_header">
+                About me
+            </div>
+            <div class="info_text">
+                
+            </div>
+        </section>
+    </div>
+    <script src="{% static 'portfolio/js/greeting.js' %}"></script>
+
+</body>
+
+</html>
