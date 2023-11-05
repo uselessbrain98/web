@@ -352,7 +352,8 @@ template {
 }
 
 html {
-  background: repeating-linear-gradient(90deg,#131212, #131212 40px, #131214 40px, #131214 120px);
+  background: #999D9E;
+  overflow-x: hidden;
 }
 
 html::-webkit-scrollbar {
@@ -368,6 +369,7 @@ html::-webkit-scrollbar {
   font-family: 'Rubik', sans-serif;
   font-size: 50px;
   color: white;
+  overflow-x: hidden;
 
 }
 
@@ -396,47 +398,38 @@ ul.nav_list li {
 }
 
 .nav_link:hover {
-  color: #FEA609;
+  color: #1c1d20;
 }
 
 section.welcome {
-  display: flex;
-  align-items: center;
-}
-
-div.welcome_text {
-  font-family: 'Rubik', sans-serif;
-  font-size: 64px;
-  color: white;
-  margin-left: 380px;
-  padding-right: 40pxv;
+ display: flex;
+ position: absolute;
+ text-align: center; 
 }
 
 div.me {
   background-image: url(../img/me.png);
   width: 696px;
   height: 727px;
-  margin-top: 90px;
-  margin-right: 326px;
+  margin-top: 30px;
+  position: absolute;
+  left: 1110px;
 }
 
-span.color_text {
-  color: #FEA609;
-}
 
 .job_text {
   font-family: 'Rubik', sans-serif;
-  font-size: 18px;
+  font-size: 44px;
   color: white;
   position: absolute;
-  margin-left: 380px;
-  margin-top: 170px;
+  left: 170px;
+  top: 270px;
 }
 
 .info_header {
   font-family: 'Rubik', sans-serif;
   font-size: 64px;
-  color: #FEA609;
+  color: white;
   margin-left: 380px;
   padding-right: 40pxv;
   padding-top: 60px;
@@ -445,9 +438,25 @@ span.color_text {
 #greeting-text{
   font-family: 'Rubik Bold', sans-serif;
   font-size: 120px;
-  color: #FEA609;
+  color: white;
   display: flex;
   justify-content: center; 
-  margin-top: 350px;  
+  margin-top: 350px;
 }
 
+#moving-text {
+  font-family: 'Rubik', sans-serif;
+  font-size: 300px;
+  color: white;
+  white-space: nowrap; /* Prevent text from wrapping */
+  animation: moveText 30s linear infinite;
+}
+
+@keyframes moveText {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}

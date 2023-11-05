@@ -20,7 +20,7 @@ const greetings = [
 ];
 
 const firstInterval = 300; // Interval for the first greeting in milliseconds
-const intervalBetween = 140; // Interval for greetings in between in milliseconds
+const intervalBetween = 100; // Interval for greetings in between in milliseconds
 const lastInterval = 400; // Interval for the last greeting in milliseconds
 
 let currentIndex = 0;
@@ -53,4 +53,4 @@ function showMainContent() {
 
 // Initial call to setGreeting
 setGreeting();
-setTimeout(showMainContent, 2600)
+setTimeout(showMainContent, 2000)
